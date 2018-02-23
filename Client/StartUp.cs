@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using LinearDataStructures;
 
 namespace Client
@@ -8,6 +7,10 @@ namespace Client
     {
         static void Main(string[] args)
         {
+            var list = new LinkedList<int>();
+
+            list.Prepend(2);
+            list.Prepend(1);
         }
     }
 }
