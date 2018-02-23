@@ -1,89 +1,102 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Text;
 
 namespace LinearDataStructures
 {
-    public class LinkedList<T>
+    public class LinkedList<T> : IEnumerable<T>
     {
-        private Node<T> startNode;
+        private Node<T> head;
 
-        private Node<T> endNode;
+        private Node<T> tail;
 
         public LinkedList()
         {
-            this.startNode = null;
-            this.endNode = null;
+            this.head = null;
+            this.tail = null;
+            this.Count = 0;
         }
 
-        public void Prepend(T value)
+        public int Count
+        {
+            get;
+            private set;
+        }
+
+        public void InsertFirst(T value)
         {
             Node<T> newNode = new Node<T>(value);
 
-            newNode.Next = this.startNode;
-            this.startNode = newNode;
+            newNode.Next = this.head;
+            this.head = newNode;
 
-            if (this.endNode == null)
+            if (this.tail == null)
             {
-                this.endNode = this.startNode;
+                this.tail = this.head;
             }
+
+            this.Count++;
         }
 
-        public void Append(T value)
+        public void InsertLast(T value)
         {
             Node<T> newNode = new Node<T>(value);
 
-            if (this.endNode == null)
+            if (this.tail == null)
             {
-                this.endNode = newNode;
-                this.startNode = newNode;
+                this.tail = newNode;
+                this.head = newNode;
                 return;
             }
 
-            this.endNode.Next = newNode;
-            this.endNode = newNode;
+            this.tail.Next = newNode;
+            this.tail = newNode;
+
+            this.Count++;
         }
 
         public T Remove(T value)
         {
-            if (this.startNode == null)
+            if (this.head == null)
             {
-                throw new ArgumentException();
+                throw new InvalidOperationException();
             }
 
-            if (this.startNode.Value.Equals(value))
+            if (this.head.Value.Equals(value))
             {
-                this.startNode = this.startNode.Next;
-                return this.startNode.Value;
+                this.head = this.head.Next;
+                this.Count--;
+                return this.head.Value;
             }
 
-            Node<T> previousNode = this.startNode;
-            Node<T> currentNode = this.startNode.Next;
+            Node<T> previousNode = this.head;
+            Node<T> currentNode = this.head.Next;
 
             while (currentNode != null)
             {
                 if (currentNode.Value.Equals(value))
                 {
                     previousNode.Next = currentNode.Next;
-                    if (currentNode == this.endNode)
+                    if (currentNode == this.tail)
                     {
-                        this.endNode = previousNode;
+                        this.tail = previousNode;
                     }
+                    this.Count--;
                     return currentNode.Value;
                 }
                 Node<T> tempNode = currentNode.Next;
                 previousNode = currentNode;
-                currentNode = tempNode;       
+                currentNode = tempNode;
             }
 
-            throw new ArgumentException();
+            throw new InvalidOperationException();
         }
 
         public bool Contains(T value)
         {
-            Node<T> currentNode = this.startNode;
+            Node<T> currentNode = this.head;
 
-            while (currentNode!= null)
+            while (currentNode != null)
             {
                 if (currentNode.Value.Equals(value))
                 {
@@ -92,6 +105,22 @@ namespace LinearDataStructures
                 currentNode = currentNode.Next;
             }
             return false;
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            Node<T> currentNode = this.head;
+
+            while (currentNode != null)
+            {
+                yield return currentNode.Value;
+                currentNode = currentNode.Next;
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
     }
 }

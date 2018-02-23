@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace LinearDataStructures.Tasks
@@ -84,15 +82,16 @@ namespace LinearDataStructures.Tasks
             }
 
             return matrix[row][col] == "0";
-
         }
 
         private static void PrintMatrix(string[][] matrix)
         {
+            StringBuilder output = new StringBuilder();
             foreach (string[] row in matrix)
             {
-                Console.WriteLine(string.Join("", row));
+                output.AppendLine(string.Join("", row));
             }
+            Console.WriteLine(output);
         }
 
         private static void FindStartIndeces(ref int startRow, ref int startCol, string[][] matrix)

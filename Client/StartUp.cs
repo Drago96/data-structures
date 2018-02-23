@@ -1,16 +1,32 @@
-﻿using System;
+﻿
+
 using LinearDataStructures;
 
 namespace Client
 {
-    class StartUp
+    internal class StartUp
     {
-        static void Main(string[] args)
+        private static void Main()
         {
-            var list = new LinkedList<int>();
+            var queue = new Queue<int>();
 
-            list.Prepend(2);
-            list.Prepend(1);
+            for (int i = 0; i < 20; i++)
+            {
+                queue.Enqueue(3);
+                queue.Enqueue(5);
+                queue.Enqueue(7);
+            }
+
+            for (int i = 0; i < 5; i++)
+            {
+                queue.Dequeue();
+            }
+
+            for (int i = 0; i < 30; i++)
+            {
+                queue.Enqueue(5);
+            }
+            
         }
     }
 }
