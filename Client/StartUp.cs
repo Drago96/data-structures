@@ -1,6 +1,4 @@
-﻿
-
-using LinearDataStructures;
+﻿using LinearDataStructures;
 
 namespace Client
 {
@@ -26,7 +24,6 @@ namespace Client
             {
                 queue.Enqueue(5);
             }
-            
         }
     }
 }
