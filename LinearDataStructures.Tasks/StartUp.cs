@@ -4,7 +4,8 @@
     {
         private static void Main()
         {
-            DistanceInLabyrinth.Solve();
+            // DistanceInLabyrinth.Solve();
+            EvaluateExpression.Solve();
         }
     }
 }
