@@ -9,23 +9,26 @@ namespace LinearDataStructures.Tasks
 {
     public static class EvaluateExpression
     {
+        private static readonly string[] leftAsociativeOperations = new string[] { "+", "-", "*", "/" };
+        private static readonly string[] rightAsociativeOperations = new string[] { "^" };
+
         public static void Solve()
         {
             string[] input = ReadInput();
 
-            int result = Evaluate(input);
+            double result = Evaluate(input);
 
             Console.WriteLine(result);
         }
 
-        private static int Evaluate(string[] input)
+        private static double Evaluate(string[] input)
         {
             Stack<string> operations = new Stack<string>();
-            Stack<int> numbers = new Stack<int>();
+            Stack<double> numbers = new Stack<double>();
 
             foreach (string expression in input)
             {
-                bool isNumber = int.TryParse(expression, out int number);
+                bool isNumber = double.TryParse(expression, out double number);
 
                 if (isNumber)
                 {
@@ -45,29 +48,36 @@ namespace LinearDataStructures.Tasks
                     }
                     else
                     {
-                        if (expression != "(")
+                        if (operations.Count > 0)
                         {
-                            if (operations.Count > 0)
+                            string currentOperation = expression;
+                            string lastOperation = operations.Peek();
+
+                            while (lastOperation != "(")
                             {
-                                int operationWeight = GetOperationWeight(expression);
+                                int operationWeight = GetOperationWeight(currentOperation);
+                                int lastOperationWeight = GetOperationWeight(lastOperation);
 
-                                string lastOperation = operations.Peek();
-                                int lastOperationWeight = GetOperationWeight(operations.Peek());
+                                Func<double, double, bool> comparator = GetOperationsComparator(expression);
 
-                                while (lastOperationWeight >= operationWeight && lastOperation != "(")
+                                if (comparator(lastOperationWeight, operationWeight))
                                 {
                                     PerformOperationAndPushResult(numbers, lastOperation);
                                     operations.Pop();
 
                                     if (operations.Count > 0)
                                     {
+                                        currentOperation = lastOperation;
                                         lastOperation = operations.Peek();
-                                        lastOperationWeight = GetOperationWeight(lastOperation);
                                     }
                                     else
                                     {
-                                        lastOperationWeight = -1;
+                                        break;
                                     }
+                                }
+                                else
+                                {
+                                    break;
                                 }
                             }
                         }
@@ -78,22 +88,41 @@ namespace LinearDataStructures.Tasks
 
             while (operations.Count != 0)
             {
-                PerformOperationAndPushResult(numbers,operations.Pop());
+                PerformOperationAndPushResult(numbers, operations.Pop());
             }
 
             return numbers.Peek();
         }
 
-        private static void PerformOperationAndPushResult(Stack<int> numbers, string operation)
+        private static Func<double, double, bool> GetOperationsComparator(string expression)
         {
-            int firstNumber = numbers.Pop();
-            int secondNumber = numbers.Pop();
+            bool isLeftAsociative = leftAsociativeOperations.Contains(expression);
 
-            int result = PerformOperation(firstNumber, secondNumber, operation);
+            if (isLeftAsociative)
+            {
+                return (a, b) => a >= b;
+            }
+
+            bool isRightAsociative = rightAsociativeOperations.Contains(expression);
+
+            if (isRightAsociative)
+            {
+                return (a, b) => a > b;
+            }
+
+            throw new InvalidOperationException();
+        }
+
+        private static void PerformOperationAndPushResult(Stack<double> numbers, string operation)
+        {
+            double firstNumber = numbers.Pop();
+            double secondNumber = numbers.Pop();
+
+            double result = PerformOperation(firstNumber, secondNumber, operation);
             numbers.Push(result);
         }
 
-        private static int PerformOperation(int firstNumber, int secondNumber, string expression)
+        private static double PerformOperation(double firstNumber, double secondNumber, string expression)
         {
             switch (expression)
             {
@@ -101,7 +130,7 @@ namespace LinearDataStructures.Tasks
                 case "-": return firstNumber - secondNumber;
                 case "*": return firstNumber * secondNumber;
                 case "/": return secondNumber / firstNumber;
-                case "^": return (int)Math.Pow(secondNumber, firstNumber);
+                case "^": return Math.Pow(secondNumber, firstNumber);
 
                 default:
                     throw new InvalidOperationException();
@@ -112,7 +141,7 @@ namespace LinearDataStructures.Tasks
         {
             string input = Console.ReadLine();
             Regex whiteSpaceRegex = new Regex("\\s*");
-            Regex elementsRegex = new Regex("(\\d+|.)");
+            Regex elementsRegex = new Regex("((\\d+\\.\\d+)|\\d+|[*-+\\/^()])");
             input = whiteSpaceRegex.Replace(input, "");
             return elementsRegex.Matches(input).Select(m => m.Value).ToArray();
         }
