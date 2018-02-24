@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinearDataStructures", "Lin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client", "Client\Client.csproj", "{8C2461B2-3CDA-42A7-BF9A-75C7CE17C845}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinearDataStructures.Tasks", "LinearDataStructures.Tasks\LinearDataStructures.Tasks.csproj", "{A6FACE78-454D-4E5E-99AD-C6069B1D1F9C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinearDataStructures.Tasks", "LinearDataStructures.Tasks\LinearDataStructures.Tasks.csproj", "{A6FACE78-454D-4E5E-99AD-C6069B1D1F9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trees", "Trees\Trees.csproj", "{ABC9B9FC-6737-47FB-9746-414E429013BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{A6FACE78-454D-4E5E-99AD-C6069B1D1F9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A6FACE78-454D-4E5E-99AD-C6069B1D1F9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A6FACE78-454D-4E5E-99AD-C6069B1D1F9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABC9B9FC-6737-47FB-9746-414E429013BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABC9B9FC-6737-47FB-9746-414E429013BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABC9B9FC-6737-47FB-9746-414E429013BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABC9B9FC-6737-47FB-9746-414E429013BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

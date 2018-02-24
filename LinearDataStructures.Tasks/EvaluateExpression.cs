@@ -7,6 +7,27 @@ using System.Text.RegularExpressions;
 
 namespace LinearDataStructures.Tasks
 {
+    /*
+     * PROBLEM:
+     * Evaluate a mathematical expression passed as an input string
+     * and print out the result. Allowed operations are:
+     * 
+     * (, ) - bracketing,
+     * * - multiplication,
+     * / - division,
+     * + - addition,
+     * '-' - subtraction,
+     * ^ - power
+     * 
+     * Example:
+     * 
+     * Input:
+     * ((2.1^3)-2.5)*3.3
+     * 
+     * Output:
+     * 22.3113
+     *
+     */
     public static class EvaluateExpression
     {
         private static readonly string[] leftAsociativeOperations = new string[] { "+", "-", "*", "/" };
@@ -127,7 +148,7 @@ namespace LinearDataStructures.Tasks
             switch (expression)
             {
                 case "+": return firstNumber + secondNumber;
-                case "-": return firstNumber - secondNumber;
+                case "-": return secondNumber - firstNumber;
                 case "*": return firstNumber * secondNumber;
                 case "/": return secondNumber / firstNumber;
                 case "^": return Math.Pow(secondNumber, firstNumber);
@@ -135,15 +156,6 @@ namespace LinearDataStructures.Tasks
                 default:
                     throw new InvalidOperationException();
             }
-        }
-
-        private static string[] ReadInput()
-        {
-            string input = Console.ReadLine();
-            Regex whiteSpaceRegex = new Regex("\\s*");
-            Regex elementsRegex = new Regex("((\\d+\\.\\d+)|\\d+|[*-+\\/^()])");
-            input = whiteSpaceRegex.Replace(input, "");
-            return elementsRegex.Matches(input).Select(m => m.Value).ToArray();
         }
 
         private static int GetOperationWeight(string operation)
@@ -160,10 +172,21 @@ namespace LinearDataStructures.Tasks
                     return 2;
                 case ")":
                 case "(":
-                    return 3;
+                    return int.MaxValue;
                 default:
                     throw new InvalidOperationException();
             }
+        }
+
+        private static string[] ReadInput()
+        {
+            string input = Console.ReadLine();
+            Regex whiteSpaceRegex = new Regex("\\s*");
+            Regex elementsRegex = new Regex("((\\d+\\.\\d+)|\\d+|[*\\-+\\/^()])");
+            return elementsRegex
+                .Matches(whiteSpaceRegex.Replace(input, ""))
+                .Select(m => m.Value)
+                .ToArray();
         }
     }
 }
