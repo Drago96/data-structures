@@ -4,7 +4,7 @@ using Trees;
 
 namespace Client
 {
-    internal class StartUp
+    public class StartUp
     {
         private static void Main()
         {

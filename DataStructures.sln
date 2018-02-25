@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client", "Client\Client.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinearDataStructures.Tasks", "LinearDataStructures.Tasks\LinearDataStructures.Tasks.csproj", "{A6FACE78-454D-4E5E-99AD-C6069B1D1F9C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trees", "Trees\Trees.csproj", "{ABC9B9FC-6737-47FB-9746-414E429013BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Trees", "Trees\Trees.csproj", "{ABC9B9FC-6737-47FB-9746-414E429013BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trees.Tasks", "Trees.Tasks\Trees.Tasks.csproj", "{51E9BB90-3727-4CC8-9D3F-B2501D550E98}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{ABC9B9FC-6737-47FB-9746-414E429013BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABC9B9FC-6737-47FB-9746-414E429013BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABC9B9FC-6737-47FB-9746-414E429013BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51E9BB90-3727-4CC8-9D3F-B2501D550E98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51E9BB90-3727-4CC8-9D3F-B2501D550E98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51E9BB90-3727-4CC8-9D3F-B2501D550E98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51E9BB90-3727-4CC8-9D3F-B2501D550E98}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

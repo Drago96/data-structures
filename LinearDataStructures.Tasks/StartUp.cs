@@ -2,7 +2,7 @@
 {
     public class StartUp
     {
-        private static void Main()
+        public static void Main()
         {
             // DistanceInLabyrinth.Solve();
             EvaluateExpression.Solve();
