@@ -17,8 +17,25 @@ namespace Trees.Tasks
             // SubtreesWithGivenSum.Solve(rootNode);
             // PathsWithGivenSum.Solve(rootNode);
 
-            BinarySearchTree<int> bst = ReadBinarySearchTree();
-            bst.Range(5,15).ToList().ForEach(Console.WriteLine);
+            //BinarySearchTree<int> bst = ReadBinarySearchTree();
+            //bst.EachInOrder(Console.WriteLine);
+
+            BinaryHeap<int> heap = ReadBinaryHeap();
+            heap.Pull();
+            heap.Pull();
+        }
+
+        private static BinaryHeap<int> ReadBinaryHeap()
+        {
+            int[] nodes = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
+            BinaryHeap<int> result = new BinaryHeap<int>();
+
+            foreach (int t in nodes)
+            {
+                result.Insert(t);
+            }
+
+            return result;
         }
 
         private static BinarySearchTree<int> ReadBinarySearchTree()

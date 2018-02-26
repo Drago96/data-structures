@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Trees
 {
-    public class BinarySearchTree<T> where T : IComparable
+    public class BinarySearchTree<T> where T : IComparable<T>
     {
         private class Node
         {
@@ -15,7 +15,7 @@ namespace Trees
                 this.Left = null;
             }
 
-            public T Value { get; private set; }
+            public T Value { get; set; }
             public Node Right { get; set; }
             public Node Left { get; set; }
         }
@@ -180,5 +180,6 @@ namespace Trees
             }
 
         }
+
     }
 }
