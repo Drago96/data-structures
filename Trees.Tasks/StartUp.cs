@@ -20,9 +20,10 @@ namespace Trees.Tasks
             //BinarySearchTree<int> bst = ReadBinarySearchTree();
             //bst.EachInOrder(Console.WriteLine);
 
-            BinaryHeap<int> heap = ReadBinaryHeap();
-            heap.Pull();
-            heap.Pull();
+            // BinaryHeap<int> heap = ReadBinaryHeap();
+            // heap.Pull();
+
+            HeapSort<int>.Sort(new int[] { 1, 5, 3, 4, 15, -5, 2, 40, 7, -3, 8 });
         }
 
         private static BinaryHeap<int> ReadBinaryHeap()
