@@ -5,11 +5,11 @@ using System.Text;
 
 namespace Trees
 {
-    public class BinaryHeap<T> where T:IComparable
+    public class MaxBinaryHeap<T> where T:IComparable
     {
         private readonly IList<T> heap;
 
-        public BinaryHeap()
+        public MaxBinaryHeap()
         {
             this.heap = new List<T>();
         }

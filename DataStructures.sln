@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinearDataStructures.Tasks"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Trees", "Trees\Trees.csproj", "{ABC9B9FC-6737-47FB-9746-414E429013BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trees.Tasks", "Trees.Tasks\Trees.Tasks.csproj", "{51E9BB90-3727-4CC8-9D3F-B2501D550E98}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Trees.Tasks", "Trees.Tasks\Trees.Tasks.csproj", "{51E9BB90-3727-4CC8-9D3F-B2501D550E98}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

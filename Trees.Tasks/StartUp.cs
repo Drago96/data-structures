@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Trees.Tasks.AStar;
 
 namespace Trees.Tasks
 {
@@ -17,19 +18,21 @@ namespace Trees.Tasks
             // SubtreesWithGivenSum.Solve(rootNode);
             // PathsWithGivenSum.Solve(rootNode);
 
-            //BinarySearchTree<int> bst = ReadBinarySearchTree();
-            //bst.EachInOrder(Console.WriteLine);
+            // BinarySearchTree<int> bst = ReadBinarySearchTree();
+            // bst.EachInOrder(Console.WriteLine);
 
-            // BinaryHeap<int> heap = ReadBinaryHeap();
+            // MaxBinaryHeap<int> heap = ReadBinaryHeap();
             // heap.Pull();
 
-            HeapSort<int>.Sort(new int[] { 1, 5, 3, 4, 15, -5, 2, 40, 7, -3, 8 });
+            // HeapSort<int>.Sort(new int[] { 1, 5, 3, 4, 15, -5, 2, 40, 7, -3, 8 });
+
+            AStarStartUp.Solve();
         }
 
-        private static BinaryHeap<int> ReadBinaryHeap()
+        private static MaxBinaryHeap<int> ReadBinaryHeap()
         {
             int[] nodes = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
-            BinaryHeap<int> result = new BinaryHeap<int>();
+            MaxBinaryHeap<int> result = new MaxBinaryHeap<int>();
 
             foreach (int t in nodes)
             {
