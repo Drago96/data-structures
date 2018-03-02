@@ -26,7 +26,19 @@ namespace Trees.Tasks
 
             // HeapSort<int>.Sort(new int[] { 1, 5, 3, 4, 15, -5, 2, 40, 7, -3, 8 });
 
-            AStarStartUp.Solve();
+            // AStarStartUp.Solve();
+
+            RedBlackTree<int> rbt = new RedBlackTree<int>();
+            rbt.Insert(5);
+            rbt.Insert(12);
+            rbt.Insert(18);
+            rbt.Insert(37);
+            rbt.Insert(48);
+            rbt.Insert(60);
+            rbt.Insert(80);
+
+            Console.WriteLine(rbt.Search(12).Count());
+            Console.WriteLine(rbt.Search(60).Count());
         }
 
         private static MaxBinaryHeap<int> ReadBinaryHeap()
