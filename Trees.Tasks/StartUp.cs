@@ -28,17 +28,22 @@ namespace Trees.Tasks
 
             // AStarStartUp.Solve();
 
-            RedBlackTree<int> rbt = new RedBlackTree<int>();
-            rbt.Insert(5);
-            rbt.Insert(12);
-            rbt.Insert(18);
-            rbt.Insert(37);
-            rbt.Insert(48);
-            rbt.Insert(60);
-            rbt.Insert(80);
+            // RedBlackTree<int> rbt = new RedBlackTree<int>();
+            // rbt.Insert(6);
+            // rbt.Insert(4);
+            // rbt.Insert(5);
+            // Console.WriteLine(rbt.Search(5).Count());
+            // Console.WriteLine(rbt.Search(4).Count());
+            // Console.WriteLine(rbt.Search(6).Count());
 
-            Console.WriteLine(rbt.Search(12).Count());
-            Console.WriteLine(rbt.Search(60).Count());
+            AVL<int> avl = new AVL<int>();
+            avl.Insert(7);
+            avl.Insert(5);
+            avl.Insert(6);
+            avl.Insert(4);
+            avl.Insert(3);
+            avl.Insert(2);
+            avl.Insert(1);
         }
 
         private static MaxBinaryHeap<int> ReadBinaryHeap()

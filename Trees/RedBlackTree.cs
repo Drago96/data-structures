@@ -158,29 +158,6 @@ namespace Trees
             return new RedBlackTree<T>(current);
         }
 
-        public void DeleteMin()
-        {
-            if (this.root == null)
-            {
-                throw new InvalidOperationException();
-            }
-
-            this.root = this.DeleteMin(this.root);
-        }
-
-        private Node DeleteMin(Node node)
-        {
-            if (node.Left == null)
-            {
-                return node.Right;
-            }
-
-            node.Left = this.DeleteMin(node.Left);
-            node.Count = 1 + this.Count(node.Left) + this.Count(node.Right);
-
-            return node;
-        }
-
         public IEnumerable<T> Range(T startRange, T endRange)
         {
             Queue<T> queue = new Queue<T>();
@@ -188,54 +165,6 @@ namespace Trees
             this.Range(this.root, queue, startRange, endRange);
 
             return queue;
-        }
-
-        public virtual void Delete(T element)
-        {
-            if (this.root == null)
-            {
-                throw new InvalidOperationException();
-            }
-            this.root = this.Delete(element, this.root);
-        }
-
-        private Node Delete(T element, Node node)
-        {
-            if (node == null)
-            {
-                return null;
-            }
-
-            int compare = element.CompareTo(node.Value);
-
-            if (compare < 0)
-            {
-                node.Left = this.Delete(element, node.Left);
-            }
-            else if (compare > 0)
-            {
-                node.Right = this.Delete(element, node.Right);
-            }
-            else
-            {
-                if (node.Right == null)
-                {
-                    return node.Left;
-                }
-                if (node.Left == null)
-                {
-                    return node.Right;
-                }
-
-                Node temp = node;
-                node = this.FindMin(temp.Right);
-                node.Right = this.DeleteMin(temp.Right);
-                node.Left = temp.Left;
-
-            }
-            node.Count = this.Count(node.Left) + this.Count(node.Right) + 1;
-
-            return node;
         }
 
         private Node FindMin(Node node)
@@ -246,29 +175,6 @@ namespace Trees
             }
 
             return this.FindMin(node.Left);
-        }
-
-        public void DeleteMax()
-        {
-            if (this.root == null)
-            {
-                throw new InvalidOperationException();
-            }
-
-            this.root = this.DeleteMax(this.root);
-        }
-
-        private Node DeleteMax(Node node)
-        {
-            if (node.Right == null)
-            {
-                return node.Left;
-            }
-
-            node.Right = this.DeleteMax(node.Right);
-            node.Count = 1 + this.Count(node.Left) + this.Count(node.Right);
-
-            return node;
         }
 
         public int Count()
@@ -405,11 +311,4 @@ namespace Trees
         }
     }
 
-    public class Launcher
-    {
-        public static void Main(string[] args)
-        {
-
-        }
-    }
 }
