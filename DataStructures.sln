@@ -13,6 +13,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Trees", "Trees\Trees.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Trees.Tasks", "Trees.Tasks\Trees.Tasks.csproj", "{51E9BB90-3727-4CC8-9D3F-B2501D550E98}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HashTables", "HashTables\HashTables.csproj", "{5BBF5A85-85EC-4AF2-B6C5-83E9083B36C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HashTables.Tasks", "HashTables.Tasks\HashTables.Tasks.csproj", "{FE6AEF0E-01C7-4800-A86F-414E37D83D96}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{51E9BB90-3727-4CC8-9D3F-B2501D550E98}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51E9BB90-3727-4CC8-9D3F-B2501D550E98}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51E9BB90-3727-4CC8-9D3F-B2501D550E98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BBF5A85-85EC-4AF2-B6C5-83E9083B36C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BBF5A85-85EC-4AF2-B6C5-83E9083B36C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BBF5A85-85EC-4AF2-B6C5-83E9083B36C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BBF5A85-85EC-4AF2-B6C5-83E9083B36C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE6AEF0E-01C7-4800-A86F-414E37D83D96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE6AEF0E-01C7-4800-A86F-414E37D83D96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE6AEF0E-01C7-4800-A86F-414E37D83D96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE6AEF0E-01C7-4800-A86F-414E37D83D96}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
