@@ -1,8 +1,4 @@
-﻿using System.ComponentModel.Design;
-using LinearDataStructures;
-using Trees;
-
-namespace Client
+﻿namespace Client
 {
     public class StartUp
     {

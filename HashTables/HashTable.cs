@@ -71,7 +71,6 @@ namespace HashTables
 
             this.hashTable = newTable.hashTable;
             this.Count = newTable.Count;
-
         }
 
         public bool AddOrReplace(TKey key, TValue value)
@@ -188,7 +187,6 @@ namespace HashTables
 
         public IEnumerable<TValue> Values
             => this.Select(kvp => kvp.Value);
-
 
         public IEnumerator<KeyValue<TKey, TValue>> GetEnumerator()
         {

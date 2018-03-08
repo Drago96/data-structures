@@ -10,7 +10,7 @@ namespace LinearDataStructures.Tasks
      * where 0 marks an empty cell and x represents an impassible wall,
      * find the minimal distance from the cell marked with * to all empty
      * cells.
-     * 
+     *
      * Input:
      * Line 1 : n -> the dimensions of the matrix
      * Line 2 -> n+1 : each row of the matrix
@@ -18,21 +18,22 @@ namespace LinearDataStructures.Tasks
      * Output:
      * The initial matrix, where all empty cells are replaced with their
      * distance to the target cell, or 'u' if no path was found.
-     * 
+     *
      * Example:
-     * 
+     *
      * Input:
      * 3
      * 0x0
      * x0*
      * 000
-     * 
+     *
      * Output:
      * ux1
      * x1*
      * 321
-     * 
+     *
      */
+
     public static class DistanceInLabyrinth
     {
         public static void Solve()

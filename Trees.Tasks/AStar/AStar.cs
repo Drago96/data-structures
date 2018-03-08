@@ -1,6 +1,6 @@
-﻿using System;
+﻿using AStar;
+using System;
 using System.Collections.Generic;
-using AStar;
 
 namespace Trees.Tasks.AStar
 {
@@ -64,7 +64,6 @@ namespace Trees.Tasks.AStar
             }
 
             return this.GetPath(parents, goal);
-
         }
 
         private bool IsWall(Node neighbour) => this.map[neighbour.Row, neighbour.Col] == 'W';
@@ -117,7 +116,6 @@ namespace Trees.Tasks.AStar
             }
 
             return result.ToArray();
-
         }
 
         private int GetH(Node current, Node goal)
@@ -129,4 +127,3 @@ namespace Trees.Tasks.AStar
         }
     }
 }
-

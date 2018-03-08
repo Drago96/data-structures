@@ -64,7 +64,6 @@ namespace Trees
 
                 node = this.RotateRight(node);
             }
-
             else if (balance < -1)
             {
                 int rightChildBalance =
@@ -76,7 +75,6 @@ namespace Trees
                 }
 
                 node = this.RotateLeft(node);
-                
             }
 
             this.UpdateHeight(node);
@@ -84,7 +82,7 @@ namespace Trees
             return node;
         }
 
-        private int Balance(Node<T> node) 
+        private int Balance(Node<T> node)
             => this.Height(node.Left) - this.Height(node.Right);
 
         private Node<T> RotateRight(Node<T> node)

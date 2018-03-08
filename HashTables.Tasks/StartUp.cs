@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Linq;
 
 namespace HashTables.Tasks
 {
-    class StartUp
+    internal class StartUp
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             //HashTable<int, int> table = new HashTable<int, int>();
 
@@ -17,7 +16,7 @@ namespace HashTables.Tasks
             //var keys = table.Keys.ToList();
             //var values = table.Values.ToList();
 
-            HashSet<int> set = new HashSet<int> {1, 3, 5, 3};
+            HashSet<int> set = new HashSet<int> { 1, 3, 5, 3 };
 
             set.Remove(3);
 
@@ -26,13 +25,12 @@ namespace HashTables.Tasks
                 Console.WriteLine(element);
             }
 
-            HashSet<int> secondSet = new HashSet<int> {1, 10};
+            HashSet<int> secondSet = new HashSet<int> { 1, 10 };
 
             foreach (var el in set.SymetricExcept(secondSet))
             {
                 Console.WriteLine(el);
             }
-
         }
     }
 }

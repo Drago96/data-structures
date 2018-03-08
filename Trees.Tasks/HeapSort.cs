@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Trees.Tasks
 {
-    public static class HeapSort<T> where T: IComparable
+    public static class HeapSort<T> where T : IComparable
     {
         public static void Sort(T[] arr)
         {

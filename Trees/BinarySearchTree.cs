@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Trees
 {
@@ -50,7 +49,6 @@ namespace Trees
                 }
                 this.Insert(value, node.Right);
             }
-
         }
 
         public bool Search(T value) => Search(value, this.Root);
@@ -103,7 +101,6 @@ namespace Trees
             }
 
             return this.DeleteMin(this.Root);
-
         }
 
         private T DeleteMin(Node node)
@@ -132,7 +129,6 @@ namespace Trees
             }
 
             return this.DeleteMax(this.Root);
-
         }
 
         private T DeleteMax(Node node)
@@ -178,8 +174,6 @@ namespace Trees
             {
                 this.Range(min, max, node.Right, result);
             }
-
         }
-
     }
 }

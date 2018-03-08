@@ -1,5 +1,5 @@
-﻿using System;
-using AStar;
+﻿using AStar;
+using System;
 
 namespace Trees.Tasks.AStar
 {
@@ -33,7 +33,6 @@ namespace Trees.Tasks.AStar
             }
 
             PrintMap();
-
         }
 
         private static char[,] ReadMap()
@@ -52,7 +51,7 @@ namespace Trees.Tasks.AStar
             return map;
         }
 
-        static Node FindGoal(char goal)
+        private static Node FindGoal(char goal)
         {
             for (int row = 0; row < map.GetLength(0); row++)
             {
@@ -68,7 +67,7 @@ namespace Trees.Tasks.AStar
             throw new ArgumentException("Object not present on map");
         }
 
-        static void PrintMap()
+        private static void PrintMap()
         {
             for (int row = 0; row < map.GetLength(0); row++)
             {

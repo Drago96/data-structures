@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Trees.Tasks
 {
@@ -12,12 +10,12 @@ namespace Trees.Tasks
             int maxDepth = 0;
             T deepestNode = root.Root;
 
-            FindDeepestNode(root,ref deepestNode, depth, ref maxDepth);
+            FindDeepestNode(root, ref deepestNode, depth, ref maxDepth);
 
             Console.WriteLine(deepestNode);
         }
 
-        private static void FindDeepestNode<T>(Tree<T> currentNode,ref T deepestNode, int currentDepth, ref int maxDepth)
+        private static void FindDeepestNode<T>(Tree<T> currentNode, ref T deepestNode, int currentDepth, ref int maxDepth)
         {
             if (currentNode == null)
             {
@@ -34,7 +32,6 @@ namespace Trees.Tasks
             {
                 FindDeepestNode(child, ref deepestNode, currentDepth + 1, ref maxDepth);
             }
-
         }
     }
 }

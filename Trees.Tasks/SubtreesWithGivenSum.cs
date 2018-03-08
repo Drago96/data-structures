@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Trees.Tasks
 {
@@ -15,7 +14,6 @@ namespace Trees.Tasks
             FindTreesWithSum(root, sum, trees);
 
             trees.ToList().ForEach(t => t.Print());
-
         }
 
         private static void FindTreesWithSum(Tree<int> root, int sum, IList<Tree<int>> trees)
@@ -32,6 +30,5 @@ namespace Trees.Tasks
 
         private static int FindSumOfTree(Tree<int> root)
             => root.Root + root.Children.Sum(FindSumOfTree);
-
     }
 }

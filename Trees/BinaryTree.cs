@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Trees
 {
@@ -12,7 +10,6 @@ namespace Trees
 
         public BinaryTree()
         {
-            
         }
 
         public BinaryTree(T value, BinaryTree<T> left = null,
@@ -26,9 +23,8 @@ namespace Trees
         public IList<T> InOrder()
         {
             IList<T> result = new List<T>();
-            this.InOrder(this,result);
+            this.InOrder(this, result);
             return result;
-
         }
 
         private void InOrder(BinaryTree<T> currentNode, IList<T> result)
@@ -48,7 +44,6 @@ namespace Trees
             IList<T> result = new List<T>();
             this.PreOrder(this, result);
             return result;
-
         }
 
         private void PreOrder(BinaryTree<T> currentNode, IList<T> result)
@@ -68,7 +63,6 @@ namespace Trees
             IList<T> result = new List<T>();
             this.PostOrder(this, result);
             return result;
-
         }
 
         private void PostOrder(BinaryTree<T> currentNode, IList<T> result)

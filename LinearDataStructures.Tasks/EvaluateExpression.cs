@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
 
 namespace LinearDataStructures.Tasks
@@ -11,23 +9,24 @@ namespace LinearDataStructures.Tasks
      * PROBLEM:
      * Evaluate a mathematical expression passed as an input string
      * and print out the result. Allowed operations are:
-     * 
+     *
      * (, ) - bracketing,
      * * - multiplication,
      * / - division,
      * + - addition,
      * '-' - subtraction,
      * ^ - power
-     * 
+     *
      * Example:
-     * 
+     *
      * Input:
      * ((2.1^3)-2.5)*3.3
-     * 
+     *
      * Output:
      * 22.3113
      *
      */
+
     public static class EvaluateExpression
     {
         private static readonly string[] leftAsociativeOperations = new string[] { "+", "-", "*", "/" };
@@ -165,14 +164,18 @@ namespace LinearDataStructures.Tasks
                 case "+":
                 case "-":
                     return 0;
+
                 case "*":
                 case "/":
                     return 1;
+
                 case "^":
                     return 2;
+
                 case ")":
                 case "(":
                     return int.MaxValue;
+
                 default:
                     throw new InvalidOperationException();
             }

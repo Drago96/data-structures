@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Trees
 {
-    public class MaxBinaryHeap<T> where T:IComparable
+    public class MaxBinaryHeap<T> where T : IComparable
     {
         private readonly IList<T> heap;
 
@@ -24,8 +23,8 @@ namespace Trees
             }
 
             T result = this.heap[0];
-            this.Swap(0, this.Count-1);
-            this.heap.RemoveAt(this.Count-1);
+            this.Swap(0, this.Count - 1);
+            this.heap.RemoveAt(this.Count - 1);
             this.HeapifyDown(0);
 
             return result;
@@ -55,10 +54,9 @@ namespace Trees
 
             if (this.IsGreater(greaterChild, index))
             {
-                this.Swap(greaterChild,index);
+                this.Swap(greaterChild, index);
                 this.HeapifyDown(greaterChild);
             }
-
         }
 
         public T Peek()
@@ -86,7 +84,7 @@ namespace Trees
 
             int parentIndex = (index - 1) / 2;
 
-            if (this.IsGreater(index,parentIndex))
+            if (this.IsGreater(index, parentIndex))
             {
                 Swap(index, parentIndex);
                 HeapifyUp(parentIndex);

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Trees.Tasks.AStar;
 
 namespace Trees.Tasks
 {
@@ -72,24 +71,23 @@ namespace Trees.Tasks
             return result;
         }
 
-
         /// <summary>
         /// Builds a Tree from console input.
         /// <para/>First line takes the node count of the tree.
         /// <para/>Each of the next n lines takes two parameters -
         /// the parent and the child of the given edge and
-        /// builds a tree accordingly. 
+        /// builds a tree accordingly.
         /// </summary>
         /// <example>
         /// This example input:
-        /// 
+        ///
         /// 3
         /// 1 2
         /// 1 3
         /// 2 4
-        /// 
+        ///
         /// will build the following tree:
-        /// 
+        ///
         ///     1
         ///    / \
         ///   2   3

@@ -20,18 +20,18 @@ namespace Trees
 
             foreach (Tree<T> child in this.Children)
             {
-                child.Print(identation+2);
+                child.Print(identation + 2);
             }
         }
 
         public IList<T> RecursiveDfs()
         {
             IList<T> result = new List<T>();
-            this.RecursiveDfs(this,result);
+            this.RecursiveDfs(this, result);
             return result;
         }
 
-        private void RecursiveDfs(Tree<T> currentNode,IList<T> result)
+        private void RecursiveDfs(Tree<T> currentNode, IList<T> result)
         {
             foreach (Tree<T> child in currentNode.Children)
             {
@@ -60,7 +60,6 @@ namespace Trees
             }
 
             return result.ToArray();
-
         }
 
         public IList<T> Bfs()
@@ -83,6 +82,5 @@ namespace Trees
 
             return result;
         }
-
     }
 }

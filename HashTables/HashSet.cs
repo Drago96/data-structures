@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace HashTables
 {
@@ -73,7 +71,6 @@ namespace HashTables
 
         public IEnumerable<T> SymetricExcept(IEnumerable<T> other)
             => this.UnionWith(other).Except(this.IntersectWith(other));
-
 
         public IEnumerator<T> GetEnumerator()
         {

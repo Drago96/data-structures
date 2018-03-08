@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Trees.Tasks
 {
@@ -31,7 +30,7 @@ namespace Trees.Tasks
 
             foreach (Tree<int> child in root.Children)
             {
-                FindPaths(child,sum,paths,currentPath);
+                FindPaths(child, sum, paths, currentPath);
             }
 
             currentPath.Pop();
